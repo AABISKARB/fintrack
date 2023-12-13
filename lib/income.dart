@@ -1,63 +1,25 @@
 import 'package:flutter/material.dart';
-
 import 'main.dart';
 
-// class income extends StatefulWidget {
-//   const income({super.key});
+class Income extends StatelessWidget {
+  const Income({super.key});
 
-//   @override
-//   State<income> createState() => _incomeState();
-// }
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: TabBarDemo(),
+    );
+  }
+}
 
-// class _incomeState extends State<income> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return const MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       home: HomePage(),
-//     );
-//   }
-// }
-
-// class HomePage extends StatefulWidget {
-//   const HomePage({super.key});
-
-//   @override
-//   State<HomePage> createState() => _HomePageState();
-// }
-
-// class _HomePageState extends State<HomePage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//         appBar: AppBar(
-//           title: const Text('Flutter Snackbar Example'),
-//         ),
-//         body: Center(
-//           child: ElevatedButton(
-//             onPressed: () {
-//               ScaffoldMessenger.of(context).showSnackBar(
-//                 const SnackBar(
-//                   content: Text('Snackbar opened!'),
-//                   duration:
-//                       Duration(seconds: 2), // Adjust the duration as needed
-//                 ),
-//               );
-//             },
-//             child: const Text('Open Snackbar'),
-//           ),
-//         ));
-//   }
-// }
-
-class IncomePage extends StatefulWidget {
-  const IncomePage({super.key});
+class TabBarDemo extends StatefulWidget {
+  const TabBarDemo({super.key});
 
   @override
   _IncomePageState createState() => _IncomePageState();
 }
 
-class _IncomePageState extends State<IncomePage> {
+class _IncomePageState extends State<TabBarDemo> {
   // Variables to store income data
   double salaryIncome = 0.0;
   double businessIncome = 0.0;
@@ -204,16 +166,5 @@ class _IncomePageState extends State<IncomePage> {
       return otherIncome;
     }
     return 0.0;
-  }
-}
-
-class Income extends StatelessWidget {
-  const Income({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: IncomePage(),
-    );
   }
 }

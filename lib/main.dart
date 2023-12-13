@@ -148,7 +148,7 @@ class Section2 extends StatelessWidget {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) =>
-                    const TabBarDemo(), // Pass data to the new screen if needed
+                    const Income(), // Pass data to the new screen if needed
               ),
             );
           }),
@@ -176,7 +176,7 @@ class Section3 extends StatelessWidget {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) =>
-                  const Income(), // Pass data to the new screen if needed
+                  const Asset(), // Pass data to the new screen if needed
             ),
           );
           // Add navigation or actions for each section here

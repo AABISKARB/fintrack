@@ -1,52 +1,15 @@
 import 'package:flutter/material.dart';
 
-class TabBarDemo extends StatelessWidget {
-  const TabBarDemo({Key? key}) : super(key: key);
+import 'main.dart';
 
-// build the app
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: DefaultTabController(
-        length: 20,
-        child: Scaffold(
-          appBar: AppBar(
-            title: const Text("Assets and liabialities"),
-            bottom: const TabBar(
-              tabs: [
-                Text("Assets",
-                    style: TextStyle(
-                        fontSize: 20, backgroundColor: Colors.blueGrey)),
-                Text("Liabialities",
-                    style: TextStyle(
-                        fontSize: 20, backgroundColor: Colors.blueGrey)),
-              ],
-            ), // TabBar
-            backgroundColor: Colors.green,
-          ),
-          // AppBar
-          body: const TabBarView(
-            children: [
-              Asset(),
-              //Center(child: Text("Assets")),
-              Center(child: Text("Liabialities")),
-            ],
-          ), // TabBarView
-        ), // Scaffold
-      ), // DefaultTabController
-    ); // MaterialApp
-  }
-}
-
-class Asset extends StatefulWidget {
-  const Asset({super.key});
+class IncomePage extends StatefulWidget {
+  const IncomePage({super.key});
 
   @override
   _IncomePageState createState() => _IncomePageState();
 }
 
-class _IncomePageState extends State<Asset> {
+class _IncomePageState extends State<IncomePage> {
   // Variables to store income data
   double salaryIncome = 0.0;
   double businessIncome = 0.0;
@@ -91,6 +54,22 @@ class _IncomePageState extends State<Asset> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Income Tracker'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            // Add functionality to perform when the back button is pressed
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const MyApp(
+                    //title: title
+                    ), // Pass data to the new screen if needed
+              ),
+            ); // Example: navigate back to the previous screen
+          },
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -177,5 +156,16 @@ class _IncomePageState extends State<Asset> {
       return otherIncome;
     }
     return 0.0;
+  }
+}
+
+class Asset extends StatelessWidget {
+  const Asset({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: IncomePage(),
+    );
   }
 }
