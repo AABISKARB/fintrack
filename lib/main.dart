@@ -1,9 +1,10 @@
+import 'package:fintrack/additionpage.dart';
 import 'package:fintrack/calculator.dart';
 import 'package:fintrack/history.dart';
 import 'package:flutter/material.dart';
+import 'incomeExpenses/incomeexpenses.dart';
 import 'accounts1.dart';
-import 'assetsliabialities.dart';
-import 'income.dart';
+import 'assetLiabialities/assetliabialiaties.dart';
 
 void main() {
   runApp(const MyApp());
@@ -117,9 +118,9 @@ class Section1 extends StatelessWidget {
           // Navigate to a new screen when the section is tapped
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => const Detailscreen(
+              builder: (context) => const One(
                   //title: title
-                  ), // Pass data to the new screen if needed
+                  ),
             ),
           );
         },
@@ -148,7 +149,7 @@ class Section2 extends StatelessWidget {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) =>
-                    const Income(), // Pass data to the new screen if needed
+                    const Two(), // Pass data to the new screen if needed
               ),
             );
           }),
@@ -176,7 +177,7 @@ class Section3 extends StatelessWidget {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) =>
-                  const Asset(), // Pass data to the new screen if needed
+                  const Three(), // Pass data to the new screen if needed
             ),
           );
           // Add navigation or actions for each section here
@@ -205,8 +206,8 @@ class Section4 extends StatelessWidget {
         onTap: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => Calculator(
-                  title: title), // Pass data to the new screen if needed
+              builder: (context) =>
+                  Four(title: title), // Pass data to the new screen if needed
             ),
           );
           // Add navigation or actions for each section here
@@ -233,7 +234,11 @@ class Section5 extends StatelessWidget {
         title: Text(title, style: const TextStyle(fontSize: 20)),
         iconColor: Colors.blue.shade200,
         onTap: () {
-          // Add navigation or actions for each section here
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const IncomePage(),
+            ),
+          );
         },
       ),
     );
@@ -257,15 +262,11 @@ class Section6 extends StatelessWidget {
         title: Text(title, style: const TextStyle(fontSize: 20)),
         iconColor: Colors.blue.shade200,
         onTap: () {
-          {
-            // Navigate to a new screen when the section is tapped
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) =>
-                    const App(), // Pass data to the new screen if needed
-              ),
-            );
-          }
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const Randi(),
+            ),
+          );
           // Add navigation or actions for each section here
         },
       ),

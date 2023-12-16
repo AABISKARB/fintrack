@@ -1,25 +1,13 @@
 import 'package:flutter/material.dart';
-import 'main.dart';
 
-class Income extends StatelessWidget {
-  const Income({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: TabBarDemo(),
-    );
-  }
-}
-
-class TabBarDemo extends StatefulWidget {
-  const TabBarDemo({super.key});
+class IncomePage extends StatefulWidget {
+  const IncomePage({super.key});
 
   @override
   _IncomePageState createState() => _IncomePageState();
 }
 
-class _IncomePageState extends State<TabBarDemo> {
+class _IncomePageState extends State<IncomePage> {
   // Variables to store income data
   double salaryIncome = 0.0;
   double businessIncome = 0.0;
@@ -64,22 +52,6 @@ class _IncomePageState extends State<TabBarDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Income Tracker'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            // Add functionality to perform when the back button is pressed
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => const MyApp(
-                    //title: title
-                    ), // Pass data to the new screen if needed
-              ),
-            ); // Example: navigate back to the previous screen
-          },
-        ),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -166,5 +138,16 @@ class _IncomePageState extends State<TabBarDemo> {
       return otherIncome;
     }
     return 0.0;
+  }
+}
+
+class Abs extends StatelessWidget {
+  const Abs({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: IncomePage(),
+    );
   }
 }

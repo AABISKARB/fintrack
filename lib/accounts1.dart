@@ -1,8 +1,9 @@
 import 'package:fintrack/main.dart';
 import 'package:flutter/material.dart';
+import 'package:pie_chart/pie_chart.dart';
 
-class Detailscreen extends StatelessWidget {
-  const Detailscreen({super.key});
+class One extends StatelessWidget {
+  const One({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,132 +48,117 @@ class Abs extends StatelessWidget {
               bottomLeft: Radius.circular(25)),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Wrap(
-          alignment: WrapAlignment.center,
-          spacing: 8.0,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          children: <Widget>[
-            InkWell(
-              onTap: () {
-                // Handle button tap for "Total portfolio"
-                print("Total portfolio tapped");
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  color: Colors.blueGrey,
-                  width: 160,
-                  height: 150,
-                  child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(Icons.attach_money, size: 50, color: Colors.white),
-                      SizedBox(height: 8),
-                      Text(
-                        "Total portfolio",
-                        textScaleFactor: 1.3,
-                        style: TextStyle(color: Colors.white),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 8.0,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: <Widget>[
+                InkWell(
+                  onTap: () {
+                    // Handle button tap for "Total portfolio"
+                    print("Total portfolio tapped");
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Container(
+                      color: Colors.blueGrey,
+                      width: 160,
+                      height: 150,
+                      child: const Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.attach_money,
+                              size: 50, color: Colors.white),
+                          SizedBox(height: 8),
+                          Text(
+                            "Total portfolio",
+                            textScaleFactor: 1.3,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                // Handle button tap for "Cash available"
-                print("Cash available tapped");
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  color: Colors.blueGrey,
-                  width: 160,
-                  height: 150,
-                  child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(
-                        Icons.money,
-                        size: 50,
-                        color: Colors.white,
+                InkWell(
+                  onTap: () {
+                    // Handle button tap for "Cash available"
+                    print("Cash available tapped");
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Container(
+                      color: Colors.blueGrey,
+                      width: 160,
+                      height: 150,
+                      child: const Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.money,
+                            size: 50,
+                            color: Colors.white,
+                          ),
+                          SizedBox(height: 8),
+                          Text(
+                            "Cash available",
+                            textScaleFactor: 1.3,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
                       ),
-                      SizedBox(height: 8),
-                      Text(
-                        "Cash available",
-                        textScaleFactor: 1.3,
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                // Handle button tap for "Cash available"
-                print("Adjust balance tapped");
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  color: Colors.blueGrey,
-                  width: 160,
-                  height: 150,
-                  child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(
-                        Icons.adjust,
-                        size: 50,
-                        color: Colors.white,
+                InkWell(
+                  onTap: () {
+                    // Handle button tap for "Cash available"
+                    print("Adjust balance tapped");
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Container(
+                      color: Colors.blueGrey,
+                      width: 160,
+                      height: 150,
+                      child: const Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.adjust,
+                            size: 50,
+                            color: Colors.white,
+                          ),
+                          SizedBox(height: 8),
+                          Text(
+                            "Adjust balance",
+                            textScaleFactor: 1.3,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
                       ),
-                      SizedBox(height: 8),
-                      Text(
-                        "Adjust balance",
-                        textScaleFactor: 1.3,
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                // Handle button tap for "Cash available"
-                print("Chart");
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  color: Colors.blueGrey,
-                  width: 160,
-                  height: 150,
-                  child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(
-                        Icons.pie_chart,
-                        size: 50,
-                        color: Colors.white,
-                      ),
-                      SizedBox(height: 8),
-                      Text(
-                        "Asset vs liabl..",
-                        textScaleFactor: 1.3,
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ],
-                  ),
+                const PieChart(
+                  dataMap: {
+                    "Asset": 12,
+                    "Liabialiaties": 23,
+                  },
                 ),
-              ),
+                const PieChart(
+                  dataMap: {
+                    "Income": 34,
+                    "Expenditure": 45,
+                  },
+                ),
+              ],
             ),
-            // Repeat the pattern for other containers/buttons
-            // ...
-          ],
+          ),
         ),
       ),
     );

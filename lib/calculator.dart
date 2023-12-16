@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-
 import 'main.dart';
-//import 'package:google_fonts/google_fonts.dart';
 
-class Calculator extends StatefulWidget {
+class Four extends StatefulWidget {
   final String title;
 
-  const Calculator({super.key, required this.title});
+  const Four({super.key, required this.title});
 
   @override
-  State<Calculator> createState() => _CalculatorState();
+  State<Four> createState() => _CalculatorState();
 }
 
-class _CalculatorState extends State<Calculator> {
+class _CalculatorState extends State<Four> {
   final TextEditingController _controller1 = TextEditingController();
   final TextEditingController _controller2 = TextEditingController();
   final TextEditingController _controller3 = TextEditingController();
@@ -65,115 +63,117 @@ class _CalculatorState extends State<Calculator> {
   }
 
   Widget body() {
-    return Container(
-      color: Colors.grey[100],
-      child: Column(children: [
-        Container(
-          height: 170,
-          decoration: const BoxDecoration(
-            color: Colors.blue,
-            borderRadius: BorderRadius.only(
-              bottomRight: Radius.circular(100),
-            ),
-          ),
-          child: const Padding(
-            padding: EdgeInsets.only(bottom: 20.0),
-            child: Align(
-              alignment: Alignment.center,
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Loan",
-                      style: TextStyle(fontSize: 35, color: Colors.white),
-                      //style: GoogleFonts.robotoMono(fontSize: 35, color: Colors.white),
-                    ),
-                    Text(
-                      "Calculator",
-                      style: TextStyle(fontSize: 35, color: Colors.white),
-                      //style: GoogleFonts.robotoMono(fontSize: 35, color: Colors.white),
-                    ),
-                  ]),
-            ),
-          ),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(30, 10, 40, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              inputForm(
-                  title: "Loan Amount:",
-                  controller: _controller1,
-                  hinttest: "e.g 2000"),
-              inputForm(
-                  title: "Annual Interest Rate(%) :",
-                  controller: _controller2,
-                  hinttest: "e.g 3"),
-              inputForm(
-                  title: "Period(in month):",
-                  controller: _controller3,
-                  hinttest: "e.g 3"),
-              const SizedBox(
-                height: 10,
+    return SingleChildScrollView(
+      child: Container(
+        color: Colors.grey[100],
+        child: Column(children: [
+          Container(
+            height: 170,
+            decoration: const BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(100),
               ),
-              GestureDetector(
-                onTap: () {
-                  calculation();
-                },
-                child: Container(
-                  height: 60,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      "CALCULATE",
-                      style: TextStyle(fontSize: 25, color: Colors.white),
+            ),
+            child: const Padding(
+              padding: EdgeInsets.only(bottom: 20.0),
+              child: Align(
+                alignment: Alignment.center,
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Loan",
+                        style: TextStyle(fontSize: 35, color: Colors.white),
+                        //style: GoogleFonts.robotoMono(fontSize: 35, color: Colors.white),
+                      ),
+                      Text(
+                        "Calculator",
+                        style: TextStyle(fontSize: 35, color: Colors.white),
+                        //style: GoogleFonts.robotoMono(fontSize: 35, color: Colors.white),
+                      ),
+                    ]),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(30, 10, 40, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                inputForm(
+                    title: "Loan Amount:",
+                    controller: _controller1,
+                    hinttest: "e.g 2000"),
+                inputForm(
+                    title: "Annual Interest Rate(%) :",
+                    controller: _controller2,
+                    hinttest: "e.g 3"),
+                inputForm(
+                    title: "Period(in month):",
+                    controller: _controller3,
+                    hinttest: "e.g 3"),
+                const SizedBox(
+                  height: 10,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    calculation();
+                  },
+                  child: Container(
+                    height: 60,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "CALCULATE",
+                        style: TextStyle(fontSize: 25, color: Colors.white),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    "Result:",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Center(
-                    child: Text(
-                      "Interest: RS ${interest.toStringAsFixed(2)}",
-                      style: const TextStyle(fontSize: 20),
+                const SizedBox(
+                  height: 10,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Result:",
+                      style: TextStyle(fontSize: 20),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Center(
-                    child: Text(
-                      "Total: RS ${total.toStringAsFixed(2)}",
-                      style: const TextStyle(fontSize: 20),
+                    const SizedBox(
+                      height: 20,
                     ),
-                  ),
-                ],
-              )
-            ],
-          ),
-        )
-      ]),
+                    Center(
+                      child: Text(
+                        "Interest: RS ${interest.toStringAsFixed(2)}",
+                        style: const TextStyle(fontSize: 20),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Center(
+                      child: Text(
+                        "Total: RS ${total.toStringAsFixed(2)}",
+                        style: const TextStyle(fontSize: 20),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          )
+        ]),
+      ),
     );
   }
 
