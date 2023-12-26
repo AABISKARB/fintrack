@@ -1,6 +1,7 @@
-import 'package:fintrack/additionpage.dart';
+//import 'package:fintrack/additionpage.dart';
 import 'package:fintrack/calculator.dart';
-import 'package:fintrack/history.dart';
+//import 'package:fintrack/history.dart';
+import 'package:fintrack/target/goal.dart';
 import 'package:flutter/material.dart';
 import 'incomeExpenses/incomeexpenses.dart';
 import 'accounts1.dart';
@@ -118,7 +119,7 @@ class Section1 extends StatelessWidget {
           // Navigate to a new screen when the section is tapped
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => const One(
+              builder: (context) => One(
                   //title: title
                   ),
             ),
@@ -236,7 +237,7 @@ class Section5 extends StatelessWidget {
         onTap: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => const IncomePage(),
+              builder: (context) => const TargetPlanner(),
             ),
           );
         },
@@ -264,7 +265,7 @@ class Section6 extends StatelessWidget {
         onTap: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => const Randi(),
+              builder: (context) => const TargetPlanner(),
             ),
           );
           // Add navigation or actions for each section here

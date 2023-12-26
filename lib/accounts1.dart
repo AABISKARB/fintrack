@@ -16,10 +16,11 @@ class One extends StatelessWidget {
 }
 
 class Abs extends StatelessWidget {
-  const Abs({super.key});
+  const Abs({super.key,});
 
   @override
   Widget build(BuildContext context) {
+    //TextEditingController _dataToPass = TextEditingController(text: dataToPass);
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -152,7 +153,7 @@ class Abs extends StatelessWidget {
                 ),
                 const PieChart(
                   dataMap: {
-                    "Income": 34,
+                    "Income": 20,
                     "Expenditure": 45,
                   },
                 ),

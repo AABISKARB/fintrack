@@ -18,9 +18,10 @@ class _CalculatorState extends State<Four> {
   late double total = 0;
 
   void calculation() {
-    final calinterestrate = (double.parse(_controller2.text) / 100 / 12) *
-        int.parse(_controller3.text);
-    final calinterest = calinterestrate * int.parse(_controller1.text);
+    final calinterest = (double.parse(_controller1.text) *
+            double.parse(_controller2.text) *
+            double.parse(_controller3.text)) /
+        100;
     setState(() {
       interest = calinterest;
       total = int.parse(_controller1.text) + interest;
@@ -114,7 +115,7 @@ class _CalculatorState extends State<Four> {
                     controller: _controller2,
                     hinttest: "e.g 3"),
                 inputForm(
-                    title: "Period(in month):",
+                    title: "Period(in year):",
                     controller: _controller3,
                     hinttest: "e.g 3"),
                 const SizedBox(
@@ -199,6 +200,7 @@ class _CalculatorState extends State<Four> {
           ),
           child: TextField(
             controller: controller,
+            keyboardType: TextInputType.number,
             decoration: InputDecoration(
                 border: const OutlineInputBorder(borderSide: BorderSide.none),
                 hintText: hinttest),
